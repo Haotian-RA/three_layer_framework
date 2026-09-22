@@ -6,7 +6,7 @@
 ![LTE](https://img.shields.io/badge/3GPP-LTE%20TS%2036.211--213%2F331-orange)
 ![NR](https://img.shields.io/badge/3GPP-5G%20NR%20TS%2038.211--213-green)
 
-No GNU Radio, no vendor PHY libraries: PSS/SSS synchronization, channel estimation, SFBC combining, convolutional/polar/LDPC decoding, and ASN.1 RRC parsing are all implemented here, cell by cell, with the relevant spec clauses cited along the way. The input is a real downlink capture recorded off the air (806 MHz, 30.72 Msps, SigMF), taken from raw IQ samples all the way to human-readable MIB and SIB1 fields.
+The receive chain — PSS/SSS synchronization and CFO estimation, channel estimation, SFBC combining, convolutional/polar/LDPC decoding, and ASN.1 RRC parsing — is implemented from the 3GPP specifications, with the relevant clauses cited along the way. The walkthrough notebooks run it stage by stage on an off-the-air LTE downlink capture (806 MHz, 30.72 Msps, SigMF), from raw IQ samples to decoded MIB and SIB1 fields.
 
 ---
 
@@ -46,7 +46,7 @@ The same chain that the walkthrough notebooks develop linearly is executed concu
 
 [`main.ipynb`](main.ipynb) sweeps the operating points — infinite vs. finite buffers, ingestion rate, serial vs. parallel per-stage concurrency — and shows the system holding real-time throughput under realistic constraints. Each framework module has a paired notebook in [`include/`](include/) with its unit tests.
 
-This repository is the Python reference implementation of the architecture; its real-time C++/TBB counterpart runs live LTE cell search on base-station signals and is part of my Ph.D. dissertation, *"A Multi-Level, High-Performance Architecture for Modern Software-Defined Radios."*
+This repository is the Python reference implementation of the architecture; its real-time C++/TBB counterpart runs live LTE cell search on base-station signals.
 
 ## Repository layout
 
@@ -70,7 +70,13 @@ jupyter lab
 
 Open any notebook above — the saved outputs let you read them top-to-bottom without executing, or re-run them end-to-end against the included capture.
 
-## Related work
+## Dissertation
+
+The framework in this repository — together with its real-time C++/TBB counterpart — is part of my Ph.D. dissertation at George Mason University (advised by Prof. Bernd-Peter Paris):
+
+> H. Zhai, *A Multi-Level, High-Performance Architecture for Modern Software-Defined Radios*, Ph.D. dissertation, George Mason University, 2026.
+
+Publications from this line of work:
 
 - H. Zhai, B.-P. Paris, "Practical Methods for Joint Time and Carrier Synchronization in LPI/LPD Communications," *IEEE MILCOM*, 2022.
 - H. Zhai, B.-P. Paris, "Accurate and Efficient Implementations of Recursive Filtering based on SIMD and Cascaded Form," *IEEE CCWC*, 2024.
