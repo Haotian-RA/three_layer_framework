@@ -70,17 +70,11 @@ jupyter lab
 
 Open any notebook above — the saved outputs let you read them top-to-bottom without executing, or re-run them end-to-end against the included capture.
 
-## Dissertation
+## Related work
 
 The framework in this repository — together with its real-time C++/TBB counterpart — is part of my Ph.D. dissertation at George Mason University (advised by Prof. Bernd-Peter Paris):
 
 > H. Zhai, *A Multi-Level, High-Performance Architecture for Modern Software-Defined Radios*, Ph.D. dissertation, George Mason University, 2026.
-
-Publications from this line of work:
-
-- H. Zhai, B.-P. Paris, "Practical Methods for Joint Time and Carrier Synchronization in LPI/LPD Communications," *IEEE MILCOM*, 2022.
-- H. Zhai, B.-P. Paris, "Accurate and Efficient Implementations of Recursive Filtering based on SIMD and Cascaded Form," *IEEE CCWC*, 2024.
-- H. Zhai, B.-P. Paris, "Fast Cascaded Recursive Filtering via a Block-Matrix Reformulation," *IEEE Trans. Signal Processing*, under review, 2026 ([arXiv:2607.14054](https://arxiv.org/abs/2607.14054)).
 
 ## Author
 
